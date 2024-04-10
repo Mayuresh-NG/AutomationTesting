@@ -1,5 +1,4 @@
-package objects;
-
+package OOPS.Inheritence;
 public class Hierarchical {
     public static void main(String[] args) {
         cat c = new cat();

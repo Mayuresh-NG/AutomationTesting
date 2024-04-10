@@ -1,4 +1,4 @@
-package objects;
+package OOPS.Inheritence;
 
 public class Multiple {
     public static void main(String[] args) {

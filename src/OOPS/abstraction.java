@@ -1,3 +1,4 @@
+package OOPS;
 abstract class A
 {
     abstract void sum();

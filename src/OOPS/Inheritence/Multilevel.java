@@ -1,4 +1,4 @@
-package objects;
+package OOPS.Inheritence;
 public class Multilevel {
     public static void main(String[] args) {
         D d = new D();

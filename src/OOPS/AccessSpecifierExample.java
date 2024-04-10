@@ -1,5 +1,4 @@
-// Main.java
-
+package OOPS;
 public class AccessSpecifierExample {
     public static void main(String[] args) {
         PublicClass publicClass = new PublicClass();

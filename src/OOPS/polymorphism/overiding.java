@@ -1,4 +1,4 @@
-package poly;
+package OOPS.polymorphism;
 
 class A {
     void add(int a, int b) {

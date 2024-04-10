@@ -1,4 +1,4 @@
-package objects;
+package OOPS.Inheritence;
 import java.util.*;
 public class first {
     public static void main(String[] args) {

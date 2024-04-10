@@ -1,4 +1,4 @@
-package objects;
+package OOPS.Inheritence;
 
 public class Hybrid {
     public static void main(String[] args) {
