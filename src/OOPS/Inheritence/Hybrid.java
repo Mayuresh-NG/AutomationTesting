@@ -1,37 +1,42 @@
 package OOPS.Inheritence;
+interface Shape {
+    void draw();
+}
 
-public class Hybrid {
-    public static void main(String[] args) {
-
+class Circle implements Shape {
+    public void draw() {
+        System.out.println("Drawing a circle");
     }
 }
 
-class a
-{
-
+class Rectangle implements Shape {
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
 }
 
-class b extends a
-{
-
+class Polygon {
+    void display() {
+        System.out.println("Displaying polygon");
+    }
 }
 
-class c extends b
-{
-
+class Triangle extends Polygon implements Shape {
+    public void draw() {
+        System.out.println("Drawing a triangle");
+    }
 }
 
-class d extends c
-{
+public class Hybrid {
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        circle.draw();
 
-}
+        Rectangle rectangle = new Rectangle();
+        rectangle.draw();
 
-class e extends c
-{
-
-}
-
-class f
-{
-
+        Triangle triangle = new Triangle();
+        triangle.draw();
+        triangle.display();
+    }
 }

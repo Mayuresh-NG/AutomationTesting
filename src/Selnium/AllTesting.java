@@ -1,11 +1,12 @@
+package Selnium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
+import java.util.Iterator;
+import java.util.*;
 
 class Testing {
     public static void performLoginTesting(ChromeDriver driver) {
@@ -16,13 +17,19 @@ class Testing {
 
         // Find the email input field and enter email
         WebElement email = driver.findElement(By.xpath("//input[@name='email']"));
-        email.sendKeys("testEmail@gmail.com");
+        email.sendKeys("testmail@gmail.com");
 
         // Find the password input field and enter password
         WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
         password.sendKeys("password");
 
-        driver.findElement(By.className("close-button")).click();
+//        driver.findElement(By.xpath("//div[@id='signupPopup']/div/div[2]/button")).click();
+
+//        WebElement errorMessage = driver.findElement(By.className("alert"));
+//        String alertText = errorMessage.getText();
+//        System.out.println(alertText);
+
+//        driver.findElement(By.className("close-button")).click();
     }
 
     public static void performSignUpTesting(ChromeDriver driver) {
@@ -79,17 +86,25 @@ class Testing {
 
     public static void Redbus(ChromeDriver driver) throws InterruptedException {
         driver.get("https://www.redbus.com/");
+
         WebElement help = driver.findElement(By.linkText("Help"));
         help.click();
 
-        driver.get("https://www.redbus.com/info/redcare");
+        Thread.sleep(3000);
+
+        Set<String> alw= driver.getWindowHandles();
+        Iterator<String> it = alw.iterator();
+
+        String pw = it.next();
+        String cw= it.next();
+
+        driver.switchTo().window(cw);
         WebElement close = driver.findElement(By.xpath("//i[@class='icon-close']"));
         close.click();
     }
 }
 
-
-public class CapstoneTesting {
+public class AllTesting {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\mayur\\Downloads\\chromedriver-win64\\chromedriver.exe");
 
@@ -100,9 +115,9 @@ public class CapstoneTesting {
 
 
 //        Testing.performLoginTesting(driver);
-//        Testing.performSignUpTesting(driver);
-//        Testing.DragAndDrop(driver);
-//        Testing.Move(driver);
-        Testing.Redbus(driver);
+//        Selnium.Testing.performSignUpTesting(driver);
+//        Selnium.Testing.DragAndDrop(driver);
+//        Selnium.Testing.Move(driver);
+//        Selnium.Testing.Redbus(driver);
     }
 }

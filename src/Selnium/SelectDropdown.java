@@ -1,10 +1,14 @@
+package Selnium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
-public class test {
+import java.util.List;
+
+public class SelectDropdown {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\mayur\\Downloads\\chromedriver-win64\\chromedriver.exe");
@@ -22,32 +26,15 @@ public class test {
 
         Select s =new Select(select);
         s.selectByIndex(5);
+
+//      Print array of options
+        List<WebElement> l=s.getOptions();
+        l.size();
+
+        for (int i=0;i<l.size();i++)
+        {
+          String k=l.get(i).getText();
+          System.out.println(k);
+        }
     }
 }
-
-//    WebDriver driver = new FirefoxDriver();
-//
-//
-//driver.get("https://www.calculator.net/");
-//
-//        driver.findElement(By.linkText("Calorie Calculator")).click();
-//
-//
-//
-//
-//        WebElement el=driver.findElement(By.id("cactivity"));
-//
-//        Select sl= new Select(el);
-//
-//        sl.selectByIndex(2);
-//
-//        List<WebElement> l=sl.getOptions();
-//        l.size();
-//
-//
-//        for (int i=0;i<l.size();i++)
-//        {
-//        String k=l.get(i).getText();
-//        System.out.println(k);
-//
-//        }

@@ -1,23 +1,34 @@
 package OOPS.polymorphism;
 
-class A {
-    void add(int a, int b) {
-        System.out.println("Class A " + (a + b));
+class animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
     }
 }
 
-class B extends A {
-    @Override
-    void add(int a, int b) {
-        System.out.println("Class B " + (a + b));
+class Dog extends animal {
+    // Method overriding
+    void makeSound() {
+        System.out.println("Dog barks");
     }
 }
 
-public class overiding {
+class Cat extends animal {
+    // Method overriding
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class overiding{
     public static void main(String[] args) {
-        // Creating an object of class B (subclass)
-        B b = new B();
-        // Calling the overridden method
-        b.add(9, 5);
+        animal animal1 = new animal();
+        animal1.makeSound(); // Animal makes a sound
+
+        Dog dog = new Dog();
+        dog.makeSound(); // Dog barks
+
+        Cat cat = new Cat();
+        cat.makeSound(); // Cat meows
     }
 }

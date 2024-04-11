@@ -1,12 +1,16 @@
 package OOPS;
+
 public class AccessSpecifierExample {
     public static void main(String[] args) {
         PublicClass publicClass = new PublicClass();
         publicClass.display();
 
-        // Accessing protected and private members from Main class is not allowed
-        // ProtectedClass protectedClass = new ProtectedClass(); // Error
-        // PrivateClass privateClass = new PrivateClass(); // Error
+        // Accessing protected members from another class within the same package
+        ProtectedClass protectedClass = new ProtectedClass();
+        protectedClass.display();
+
+        PrivateClass pc = new PrivateClass();
+        //pc.display(); // Will not work because its private
     }
 }
 
