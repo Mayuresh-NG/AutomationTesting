@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.*;
 
 class Testing {
-    public static void performLoginTesting(ChromeDriver driver) {
+    public static void performLoginTesting(ChromeDriver driver) throws InterruptedException {
         driver.get("http://localhost:4200/landing");
 
         // Find the login link and click it
@@ -23,6 +23,9 @@ class Testing {
         WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
         password.sendKeys("password");
 
+        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//BUTTON[@_ngcontent-ng-c2758230828=''][text()=' Continue ']")).click();
 //        driver.findElement(By.xpath("//div[@id='signupPopup']/div/div[2]/button")).click();
 
 //        WebElement errorMessage = driver.findElement(By.className("alert"));
@@ -114,7 +117,7 @@ public class AllTesting {
         ChromeDriver driver = new ChromeDriver(options);
 
 
-//        Testing.performLoginTesting(driver);
+        Testing.performLoginTesting(driver);
 //        Selnium.Testing.performSignUpTesting(driver);
 //        Selnium.Testing.DragAndDrop(driver);
 //        Selnium.Testing.Move(driver);
